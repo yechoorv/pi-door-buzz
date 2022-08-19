@@ -46,13 +46,13 @@ class Listener():
         """Initialised with an :class:`SignalProcessor` object using the signal processing method found inside :attr:`config`"""
         self.confirm()
 
-    def clapWait(self, door buzz):
+    def clapWait(self, doorbuzz):
         """Start waiting for a small duration of time recursively until no more new claps are detected
 
         :param int door buzz: Number of claps found at the time of wait initialised
         """
         sleep(self.config.wait)
-        if self.claps > door buzz:
+        if self.claps > doorbuzz:
             self.clapWait(self.claps)
 
     def listenClaps(self, threadName):
