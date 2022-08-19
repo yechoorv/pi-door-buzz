@@ -52,7 +52,7 @@ test:
 	@pytest
 
 run:
-	@python3 ./example/advanced.app.py
+	@python3 ./apps/advanced.app.py
 
 clean-build:
 	@rm -rf build/
