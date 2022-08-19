@@ -144,9 +144,7 @@ class Device:
         self.maxSamples = []
         os.system('clear')
 
-        print("*******************")
-        print(self.input.get_device_count())
-        # self.__setInputDevice()
+        self.__setInputDevice()
         self.calibrateBufferSize(calibrate)
         # sys.exit(0)
 
@@ -162,11 +160,7 @@ class Device:
         if self.input.get_device_count() < 1:
             print("No input audio device is found in your system")
             sys.exit(1)
-        try:
-            self.defaultDevice = self.input.get_default_input_device_info()
-        except:
-            print("*******************")
-            print(self.input.get_device_count())
+        self.defaultDevice = self.input.get_default_input_device_info()
         self.config.channels = int(self.defaultDevice['maxInputChannels'])
         self.config.rate = int(self.defaultDevice['defaultSampleRate'])
 
