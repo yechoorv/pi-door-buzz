@@ -12,6 +12,6 @@ from ._listener import Listener, Device
 from ._processor import SignalProcessor
 
 __project__ = 'pi-door-buzz'
-__version__ = '0.1'
+__version__ = '0.2'
 __author__ = 'Vamsi Yechoor'
 __all__ = ['Settings', 'Listener', 'Device', 'SignalProcessor']
