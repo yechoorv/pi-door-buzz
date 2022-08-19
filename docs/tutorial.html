@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Raspberry Pi Tutorial &mdash; pi-clap 1.4.2 documentation</title>
+  <title>Raspberry Pi Tutorial &mdash; pi-door-buzz 1.4.2 documentation</title>
   
 
   
@@ -51,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> pi-clap
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> pi-door-buzz
           
 
           
@@ -95,8 +95,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#hardware-requirements">Hardware Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setting-up-raspberry-pi">Setting up Raspberry Pi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-pi-clap">Using pi-clap</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-wire-up-for-pi-clap">How to wire up for pi-clap?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-pi-door-buzz">Using pi-door-buzz</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-wire-up-for-pi-door-buzz">How to wire up for pi-door-buzz?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
@@ -107,8 +107,8 @@
 <p class="caption"><span class="caption-text">Links</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://magpi.raspberrypi.org/articles/raspberry-pi-clapper">MagPi Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/pi-clap/">Python Package</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/nikhiljohn10/pi-clap">Source Code</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/pi-door-buzz/">Python Package</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/nikhiljohn10/pi-door-buzz">Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
@@ -125,7 +125,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">pi-clap</a>
+          <a href="index.html">pi-door-buzz</a>
         
       </nav>
 
@@ -233,13 +233,13 @@
 </ol>
 <p>Now you are updated and ready to use via SSH from different computer. Now you can disconnect monitor and keyboard if you want to use SSH.</p>
 </div>
-<div class="section" id="using-pi-clap">
-<h2>Using pi-clap<a class="headerlink" href="#using-pi-clap" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="using-pi-door-buzz">
+<h2>Using pi-door-buzz<a class="headerlink" href="#using-pi-door-buzz" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><a class="reference internal image-reference" href="_images/pi_circuit.png"><img alt="Raspberry Pi Circuit" src="_images/pi_circuit.png" style="width: 600px;" /></a>
 </div></blockquote>
-<div class="section" id="how-to-wire-up-for-pi-clap">
-<h3>How to wire up for pi-clap?<a class="headerlink" href="#how-to-wire-up-for-pi-clap" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="how-to-wire-up-for-pi-door-buzz">
+<h3>How to wire up for pi-door-buzz?<a class="headerlink" href="#how-to-wire-up-for-pi-door-buzz" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Connect <code class="docutils literal notranslate"><span class="pre">Ground</span> <span class="pre">Pin(6)</span></code> to breadboard’s sideline</p></li>
 <li><p>Connect one Red LED and 100ohm Resistor in serial with LED’s positive ends</p></li>
@@ -248,10 +248,10 @@
 <li><p>Plugin the USB input audio device(Audio Card or Microphone)</p></li>
 <li><p>Reboot the OS with <cite>sudo reboot</cite> (This should load the audio driver automatically in most cases for the device connected)</p></li>
 <li><p>Install pip &amp; portaudio module <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">python3-pip</span> <span class="pre">portaudio19-dev</span></code></p></li>
-<li><p>Install pi-clap pip module <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">pi-clap</span></code></p></li>
+<li><p>Install pi-door-buzz pip module <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">pi-door-buzz</span></code></p></li>
 </ol>
-<p>Now the Raspberry Pi is ready use pi-clap</p>
-<p>Use following code for pi-clap to start listening. Make the necessary adjustments in the code and values to match your microphone and pinout. You can also add more methods in the derived classes.</p>
+<p>Now the Raspberry Pi is ready use pi-door-buzz</p>
+<p>Use following code for pi-door-buzz to start listening. Make the necessary adjustments in the code and values to match your microphone and pinout. You can also add more methods in the derived classes.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -311,7 +311,7 @@
 57
 58</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
 
-<span class="kn">from</span> <span class="nn">piclap</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pidoorbuzz</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">gpiozero</span> <span class="kn">import</span> <span class="n">LED</span>
 
 
@@ -406,7 +406,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, Nikhil John
+        &copy; Copyright 2020, Vamsi Yechoor
 
     </p>
   </div>

@@ -1,6 +1,6 @@
-PROJECT     := pi-clap
-AUTHOR      := Nikhil John
-SRCDIR      := ./piclap
+PROJECT     := pi-door-buzz
+AUTHOR      := Vamsi Yechoor
+SRCDIR      := ./pidoorbuzz
 DOCSDIR     := ./docs
 DOCSRCDIR   := $(DOCSDIR)/source
 DOMAIN      := $(PROJECT).nikz.in
@@ -68,7 +68,7 @@ clean: clean-build
 	@find . -name '__pycache__' -exec rm -rf {} +
 	@find . -name '.pytest_cache' -exec rm -rf {} +
 
-build: clean test
+build: clean
 	@python3 setup.py sdist bdist_wheel
 	@twine check dist/*
 
@@ -81,16 +81,16 @@ test-publish: build
 	@make clean
 
 install: clean setup
-	@python3 -m pip install --user pi-clap==$(RELEASE)
+	@python3 -m pip install --user pi-door-buzz==$(RELEASE)
 
 test-install: clean setup
-	@python3 -m pip install --user --index-url https://test.pypi.org/simple/ pi-clap==$(RELEASE)
+	@python3 -m pip install --user --index-url https://test.pypi.org/simple/ pi-door-buzz==$(RELEASE)
 
 local-install: build
 	@python3 -m pip install --user dist/pi_clap-$(RELEASE)-py3-none-any.whl
 
 uninstall:
-	@python3 -m pip uninstall pi-clap
+	@python3 -m pip uninstall pi-door-buzz
 
 docs-clean:
 	@rm -rf $(DOCSDIR)/_* $(DOCSDIR)/*.* $(DOCSDIR)/.buildinfo $(DOCSRCDIR)/_build/*

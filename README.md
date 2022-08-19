@@ -1,16 +1,16 @@
-pi-clap
+pi-door-buzz
 =======
 
-[![Python package](https://github.com/nikhiljohn10/pi-clap/workflows/Python%20package/badge.svg?branch=master)](https://pypi.python.org/pypi/pi-clap/)
-[![Latest Version](https://img.shields.io/pypi/v/pi-clap)](https://pypi.python.org/pypi/pi-clap/)
-[![Supported Python versions](https://img.shields.io/pypi/pyversions/pi-clap)](https://pypi.python.org/pypi/pi-clap/)
-[![Code Size](https://img.shields.io/github/languages/code-size/nikhiljohn10/pi-clap)](https://pypi.python.org/pypi/pi-clap/)
-[![Downloads](https://img.shields.io/pypi/dm/pi-clap)](https://pypi.python.org/pypi/pi-clap/)
-[![License](https://img.shields.io/pypi/l/pi-clap)](https://github.com/nikhiljohn10/pi-clap/blob/master/LICENSE)
+[![Python package](https://github.com/nikhiljohn10/pi-door-buzz/workflows/Python%20package/badge.svg?branch=master)](https://pypi.python.org/pypi/pi-door-buzz/)
+[![Latest Version](https://img.shields.io/pypi/v/pi-door-buzz)](https://pypi.python.org/pypi/pi-door-buzz/)
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/pi-door-buzz)](https://pypi.python.org/pypi/pi-door-buzz/)
+[![Code Size](https://img.shields.io/github/languages/code-size/nikhiljohn10/pi-door-buzz)](https://pypi.python.org/pypi/pi-door-buzz/)
+[![Downloads](https://img.shields.io/pypi/dm/pi-door-buzz)](https://pypi.python.org/pypi/pi-door-buzz/)
+[![License](https://img.shields.io/pypi/l/pi-door-buzz)](https://github.com/nikhiljohn10/pi-door-buzz/blob/master/LICENSE)
 
-A python package for clap detection
+A python package for door buzz detection
 
-Visit Official documentation at [pi-clap.nikz.in](https://pi-clap.nikz.in/)
+Visit Official documentation at [pi-door-buzz.nikz.in](https://pi-door-buzz.nikz.in/)
 
 ### Platforms Supported
 
@@ -37,25 +37,25 @@ Visit Official documentation at [pi-clap.nikz.in](https://pi-clap.nikz.in/)
 
 ### Upcoming features
 
-* Adding advanced clap detection algorithms
+* Adding advanced door buzz detection algorithms
 * Adding support for automation platforms like Amazon Alexa, Google Home, IFTTT etc.
 
 ### Development
 
 ```
-git clone https://github.com/nikhiljohn10/pi-clap
-cd pi-clap
+git clone https://github.com/nikhiljohn10/pi-door-buzz
+cd pi-door-buzz
 make help # Display the possible options available
 ```
 
-Version number is fetched from [`piclap/__init__.py`](https://github.com/nikhiljohn10/pi-clap/blob/master/piclap/__init__.py)
+Version number is fetched from [`pidoorbuzz/__init__.py`](https://github.com/nikhiljohn10/pi-door-buzz/blob/master/pidoorbuzz/__init__.py)
 
-- Package - [/piclap](https://github.com/nikhiljohn10/pi-clap/tree/master/piclap)
-- Examples - [/example](https://github.com/nikhiljohn10/pi-clap/tree/master/example)
-- Documentation - [/docs/source](https://github.com/nikhiljohn10/pi-clap/tree/master/docs/source)
-- Test Cases - [/test](https://github.com/nikhiljohn10/pi-clap/tree/master/tests)
-- Github Actions - [/.github/workflows](https://github.com/nikhiljohn10/pi-clap/tree/master/.github/workflows)
+- Package - [/pidoorbuzz](https://github.com/nikhiljohn10/pi-door-buzz/tree/master/pidoorbuzz)
+- Examples - [/example](https://github.com/nikhiljohn10/pi-door-buzz/tree/master/example)
+- Documentation - [/docs/source](https://github.com/nikhiljohn10/pi-door-buzz/tree/master/docs/source)
+- Test Cases - [/test](https://github.com/nikhiljohn10/pi-door-buzz/tree/master/tests)
+- Github Actions - [/.github/workflows](https://github.com/nikhiljohn10/pi-door-buzz/tree/master/.github/workflows)
 
 ### License
 
-[MIT License](https://github.com/nikhiljohn10/pi-clap/blob/master/LICENSE)
+[MIT License](https://github.com/nikhiljohn10/pi-door-buzz/blob/master/LICENSE)

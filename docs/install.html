@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; pi-clap 1.4.2 documentation</title>
+  <title>Installation &mdash; pi-door-buzz 1.4.2 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Documentation" href="documentation.html" />
-    <link rel="prev" title="Welcome to pi-clap" href="index.html" /> 
+    <link rel="prev" title="Welcome to pi-door-buzz" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -51,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> pi-clap
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> pi-door-buzz
           
 
           
@@ -97,12 +97,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#macos">MacOS</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#install-pi-clap">Install pi-clap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-pi-door-buzz">Install pi-door-buzz</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#using-git">Using Git</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-pip">Using Pip</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#using-pi-clap">Using pi-clap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-pi-door-buzz">Using pi-door-buzz</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
@@ -112,8 +112,8 @@
 <p class="caption"><span class="caption-text">Links</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://magpi.raspberrypi.org/articles/raspberry-pi-clapper">MagPi Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/pi-clap/">Python Package</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/nikhiljohn10/pi-clap">Source Code</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/pi-door-buzz/">Python Package</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/nikhiljohn10/pi-door-buzz">Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
@@ -130,7 +130,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">pi-clap</a>
+          <a href="index.html">pi-door-buzz</a>
         
       </nav>
 
@@ -224,12 +224,12 @@ python3 -m pip install --user pyaudio <span class="o">||</span> python3 -m pip i
 </div>
 </div>
 </div>
-<div class="section" id="install-pi-clap">
-<h2>Install pi-clap<a class="headerlink" href="#install-pi-clap" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-pi-door-buzz">
+<h2>Install pi-door-buzz<a class="headerlink" href="#install-pi-door-buzz" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="using-git">
 <h3>Using Git<a class="headerlink" href="#using-git" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/nikhiljohn10/pi-clap
-<span class="nb">cd</span> pi-clap
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/nikhiljohn10/pi-door-buzz
+<span class="nb">cd</span> pi-door-buzz
 make local-install
 make run
 </pre></div>
@@ -238,15 +238,15 @@ make run
 </div>
 <div class="section" id="using-pip">
 <h3>Using Pip<a class="headerlink" href="#using-pip" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m pip install --user pi-clap
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m pip install --user pi-door-buzz
 </pre></div>
 </div>
 <p><strong>Use the module as it is given in the example below.</strong></p>
 </div>
 </div>
-<div class="section" id="using-pi-clap">
-<h2>Using pi-clap<a class="headerlink" href="#using-pi-clap" title="Permalink to this headline">¶</a></h2>
-<p>Writing an app using pi-clap is only 3 lines it need ideally.</p>
+<div class="section" id="using-pi-door-buzz">
+<h2>Using pi-door-buzz<a class="headerlink" href="#using-pi-door-buzz" title="Permalink to this headline">¶</a></h2>
+<p>Writing an app using pi-door-buzz is only 3 lines it need ideally.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -254,7 +254,7 @@ make run
 5
 6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
 
-<span class="kn">from</span> <span class="nn">piclap</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pidoorbuzz</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">listener</span> <span class="o">=</span> <span class="n">Listener</span><span class="p">()</span>
 <span class="n">listener</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
@@ -301,7 +301,7 @@ make run
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
 <span class="hll">
-</span><span class="hll"><span class="kn">from</span> <span class="nn">piclap</span> <span class="kn">import</span> <span class="o">*</span>
+</span><span class="hll"><span class="kn">from</span> <span class="nn">pidoorbuzz</span> <span class="kn">import</span> <span class="o">*</span>
 </span><span class="hll">
 </span><span class="hll">
 </span><span class="hll"><span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="n">Settings</span><span class="p">):</span>
@@ -346,7 +346,7 @@ make run
         <a href="documentation.html" class="btn btn-neutral float-right" title="Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to pi-clap" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to pi-door-buzz" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -356,7 +356,7 @@ make run
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, Nikhil John
+        &copy; Copyright 2020, Vamsi Yechoor
 
     </p>
   </div>

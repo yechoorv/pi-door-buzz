@@ -46,13 +46,13 @@ class Listener():
         """Initialised with an :class:`SignalProcessor` object using the signal processing method found inside :attr:`config`"""
         self.confirm()
 
-    def clapWait(self, clap):
+    def clapWait(self, door buzz):
         """Start waiting for a small duration of time recursively until no more new claps are detected
 
-        :param int clap: Number of claps found at the time of wait initialised
+        :param int door buzz: Number of claps found at the time of wait initialised
         """
         sleep(self.config.wait)
-        if self.claps > clap:
+        if self.claps > door buzz:
             self.clapWait(self.claps)
 
     def listenClaps(self, threadName):
@@ -143,7 +143,10 @@ class Device:
         self.input = pyaudio.PyAudio()
         self.maxSamples = []
         os.system('clear')
-        self.__setInputDevice()
+
+        print("*******************")
+        print(self.input.get_device_count())
+        # self.__setInputDevice()
         self.calibrateBufferSize(calibrate)
         # sys.exit(0)
 
@@ -159,7 +162,11 @@ class Device:
         if self.input.get_device_count() < 1:
             print("No input audio device is found in your system")
             sys.exit(1)
-        self.defaultDevice = self.input.get_default_input_device_info()
+        try:
+            self.defaultDevice = self.input.get_default_input_device_info()
+        except:
+            print("*******************")
+            print(self.input.get_device_count())
         self.config.channels = int(self.defaultDevice['maxInputChannels'])
         self.config.rate = int(self.defaultDevice['defaultSampleRate'])
 
@@ -208,7 +215,7 @@ class Device:
             self.setThreshold()
 
     def setThreshold(self):
-        """Set the threashold value to the most closest value where a clap is detected. (Not accurate)"""
+        """Set the threashold value to the most closest value where a door buzz is detected. (Not accurate)"""
         maximum = max(self.maxSamples)
         median = stat.median_high(self.maxSamples)
         inter_value = median * 3.141592653589793

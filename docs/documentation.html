@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Documentation &mdash; pi-clap 1.4.2 documentation</title>
+  <title>Documentation &mdash; pi-door-buzz 1.4.2 documentation</title>
   
 
   
@@ -51,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> pi-clap
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> pi-door-buzz
           
 
           
@@ -103,8 +103,8 @@
 <p class="caption"><span class="caption-text">Links</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://magpi.raspberrypi.org/articles/raspberry-pi-clapper">MagPi Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/pi-clap/">Python Package</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/nikhiljohn10/pi-clap">Source Code</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/pi-door-buzz/">Python Package</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/nikhiljohn10/pi-door-buzz">Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
@@ -121,7 +121,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">pi-clap</a>
+          <a href="index.html">pi-door-buzz</a>
         
       </nav>
 
@@ -176,66 +176,66 @@
 <div class="section" id="listener-module">
 <h2>Listener Module<a class="headerlink" href="#listener-module" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="piclap.Listener">
-<em class="property">class </em><code class="sig-prename descclassname">piclap.</code><code class="sig-name descname">Listener</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">calibrate</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_listener.html#Listener"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Listener" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Listener">
+<em class="property">class </em><code class="sig-prename descclassname">pidoorbuzz.</code><code class="sig-name descname">Listener</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">calibrate</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_listener.html#Listener"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Listener" title="Permalink to this definition">¶</a></dt>
 <dd><p>Describes methods which are called by user for the initialisation of the PyAudio module to stream microphone input.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>config</strong> (class: <a class="reference internal" href="#piclap.Settings" title="piclap.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a>) – An object of <a class="reference internal" href="#piclap.Settings" title="piclap.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a> which is used for configuring the module, defaults to None</p></li>
+<li><p><strong>config</strong> (class: <a class="reference internal" href="#pidoorbuzz.Settings" title="pidoorbuzz.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a>) – An object of <a class="reference internal" href="#pidoorbuzz.Settings" title="pidoorbuzz.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a> which is used for configuring the module, defaults to None</p></li>
 <li><p><strong>calibrate</strong> (<em>bool</em>) – If the flag is set, the chunk size is calibrated, defaults to True</p></li>
 </ul>
 </dd>
 <dt class="field-even">Variables</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="#piclap.Listener.config" title="piclap.Listener.config"><strong>config</strong></a> (class: <cite>Settings</cite>) – Store the <cite>Settings</cite> object</p></li>
+<li><p><a class="reference internal" href="#pidoorbuzz.Listener.config" title="pidoorbuzz.Listener.config"><strong>config</strong></a> (class: <cite>Settings</cite>) – Store the <cite>Settings</cite> object</p></li>
 <li><p><strong>input</strong> (class: <cite>pyaudio.PyAudio</cite>) – Store the <cite>PyAudio</cite> object</p></li>
 <li><p><strong>stream</strong> (class: <cite>pyaudio.Stream</cite>) – Open a new input audio stream and store the stream object</p></li>
-<li><p><a class="reference internal" href="#piclap.Listener.claps" title="piclap.Listener.claps"><strong>claps</strong></a> (<em>int</em>) – Store current value of claps counted and initially set to <cite>0</cite></p></li>
+<li><p><a class="reference internal" href="#pidoorbuzz.Listener.claps" title="pidoorbuzz.Listener.claps"><strong>claps</strong></a> (<em>int</em>) – Store current value of claps counted and initially set to <cite>0</cite></p></li>
 <li><p><strong>lock</strong> (<em>thread.lock</em>) – Store the thread lock</p></li>
-<li><p><a class="reference internal" href="#piclap.Listener.processor" title="piclap.Listener.processor"><strong>processor</strong></a> (class: <cite>SignalProcessor</cite>) – Store the <cite>Processor</cite> object</p></li>
+<li><p><a class="reference internal" href="#pidoorbuzz.Listener.processor" title="pidoorbuzz.Listener.processor"><strong>processor</strong></a> (class: <cite>SignalProcessor</cite>) – Store the <cite>Processor</cite> object</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="piclap.Listener.clapWait">
-<code class="sig-name descname">clapWait</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">clap</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_listener.html#Listener.clapWait"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Listener.clapWait" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Listener.clapWait">
+<code class="sig-name descname">clapWait</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">door buzz</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_listener.html#Listener.clapWait"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Listener.clapWait" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start waiting for a small duration of time recursively until no more new claps are detected</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>clap</strong> (<em>int</em>) – Number of claps found at the time of wait initialised</p>
+<dd class="field-odd"><p><strong>door buzz</strong> (<em>int</em>) – Number of claps found at the time of wait initialised</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="piclap.Listener.claps">
-<code class="sig-name descname">claps</code><a class="headerlink" href="#piclap.Listener.claps" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Listener.claps">
+<code class="sig-name descname">claps</code><a class="headerlink" href="#pidoorbuzz.Listener.claps" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 <p>This class property contains the current count of claps detected</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="piclap.Listener.config">
-<code class="sig-name descname">config</code><a class="headerlink" href="#piclap.Listener.config" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the <a class="reference internal" href="#piclap.Listener.config" title="piclap.Listener.config"><code class="xref py py-attr docutils literal notranslate"><span class="pre">config</span></code></a> parameter is <code class="docutils literal notranslate"><span class="pre">None</span></code>, an object of <a class="reference internal" href="#piclap.Settings" title="piclap.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a> is assigned</p>
+<dt id="pidoorbuzz.Listener.config">
+<code class="sig-name descname">config</code><a class="headerlink" href="#pidoorbuzz.Listener.config" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the <a class="reference internal" href="#pidoorbuzz.Listener.config" title="pidoorbuzz.Listener.config"><code class="xref py py-attr docutils literal notranslate"><span class="pre">config</span></code></a> parameter is <code class="docutils literal notranslate"><span class="pre">None</span></code>, an object of <a class="reference internal" href="#pidoorbuzz.Settings" title="pidoorbuzz.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a> is assigned</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.Listener.confirm">
-<code class="sig-name descname">confirm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_listener.html#Listener.confirm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Listener.confirm" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Listener.confirm">
+<code class="sig-name descname">confirm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_listener.html#Listener.confirm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Listener.confirm" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="piclap.Listener.device">
-<code class="sig-name descname">device</code><a class="headerlink" href="#piclap.Listener.device" title="Permalink to this definition">¶</a></dt>
-<dd><p>Stores an <a class="reference internal" href="#piclap.Device" title="piclap.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></a> object which initialise <code class="xref py py-obj docutils literal notranslate"><span class="pre">PyAudio</span></code> with calibration and manages the audio interface</p>
+<dt id="pidoorbuzz.Listener.device">
+<code class="sig-name descname">device</code><a class="headerlink" href="#pidoorbuzz.Listener.device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores an <a class="reference internal" href="#pidoorbuzz.Device" title="pidoorbuzz.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></a> object which initialise <code class="xref py py-obj docutils literal notranslate"><span class="pre">PyAudio</span></code> with calibration and manages the audio interface</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.Listener.listenClaps">
-<code class="sig-name descname">listenClaps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">threadName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_listener.html#Listener.listenClaps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Listener.listenClaps" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method runs on a child thread with <code class="xref py py-attr docutils literal notranslate"><span class="pre">lock</span></code> when <a class="reference internal" href="#piclap.Listener.claps" title="piclap.Listener.claps"><code class="xref py py-attr docutils literal notranslate"><span class="pre">claps</span></code></a> equals <code class="docutils literal notranslate"><span class="pre">1</span></code> and reset the class property <a class="reference internal" href="#piclap.Listener.claps" title="piclap.Listener.claps"><code class="xref py py-attr docutils literal notranslate"><span class="pre">claps</span></code></a> to <code class="docutils literal notranslate"><span class="pre">0</span></code> when execution is finished</p>
+<dt id="pidoorbuzz.Listener.listenClaps">
+<code class="sig-name descname">listenClaps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">threadName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_listener.html#Listener.listenClaps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Listener.listenClaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method runs on a child thread with <code class="xref py py-attr docutils literal notranslate"><span class="pre">lock</span></code> when <a class="reference internal" href="#pidoorbuzz.Listener.claps" title="pidoorbuzz.Listener.claps"><code class="xref py py-attr docutils literal notranslate"><span class="pre">claps</span></code></a> equals <code class="docutils literal notranslate"><span class="pre">1</span></code> and reset the class property <a class="reference internal" href="#pidoorbuzz.Listener.claps" title="pidoorbuzz.Listener.claps"><code class="xref py py-attr docutils literal notranslate"><span class="pre">claps</span></code></a> to <code class="docutils literal notranslate"><span class="pre">0</span></code> when execution is finished</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>threadName</strong> (<em>str</em>) – Name of the child thread started</p>
@@ -244,15 +244,15 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="piclap.Listener.processor">
-<code class="sig-name descname">processor</code><a class="headerlink" href="#piclap.Listener.processor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialised with an <a class="reference internal" href="#piclap.SignalProcessor" title="piclap.SignalProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalProcessor</span></code></a> object using the signal processing method found inside <a class="reference internal" href="#piclap.Listener.config" title="piclap.Listener.config"><code class="xref py py-attr docutils literal notranslate"><span class="pre">config</span></code></a></p>
+<dt id="pidoorbuzz.Listener.processor">
+<code class="sig-name descname">processor</code><a class="headerlink" href="#pidoorbuzz.Listener.processor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialised with an <a class="reference internal" href="#pidoorbuzz.SignalProcessor" title="pidoorbuzz.SignalProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalProcessor</span></code></a> object using the signal processing method found inside <a class="reference internal" href="#pidoorbuzz.Listener.config" title="pidoorbuzz.Listener.config"><code class="xref py py-attr docutils literal notranslate"><span class="pre">config</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.Listener.start">
-<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_listener.html#Listener.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Listener.start" title="Permalink to this definition">¶</a></dt>
-<dd><p>When this method is called, the listener start reading binary data from stream and sreach for claps inside the chunks of data using <a class="reference internal" href="#piclap.SignalProcessor" title="piclap.SignalProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalProcessor</span></code></a> until <a class="reference internal" href="#piclap.Settings.exit" title="piclap.Settings.exit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Settings.exit</span></code></a> flag is <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<dt id="pidoorbuzz.Listener.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_listener.html#Listener.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Listener.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>When this method is called, the listener start reading binary data from stream and sreach for claps inside the chunks of data using <a class="reference internal" href="#pidoorbuzz.SignalProcessor" title="pidoorbuzz.SignalProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalProcessor</span></code></a> until <a class="reference internal" href="#pidoorbuzz.Settings.exit" title="pidoorbuzz.Settings.exit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Settings.exit</span></code></a> flag is <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>: If <strong>Control + C</strong> is pressed on keyboard</p>
@@ -261,8 +261,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.Listener.stop">
-<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_listener.html#Listener.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Listener.stop" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Listener.stop">
+<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_listener.html#Listener.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Listener.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>When this method is called, the listener stop listening by closing the stream safely and terminating the connection</p>
 </dd></dl>
 
@@ -272,98 +272,98 @@
 <div class="section" id="settings-module">
 <h2>Settings Module<a class="headerlink" href="#settings-module" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="piclap.Settings">
-<em class="property">class </em><code class="sig-prename descclassname">piclap.</code><code class="sig-name descname">Settings</code><a class="reference internal" href="_modules/piclap/_settings.html#Settings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Settings" title="Permalink to this definition">¶</a></dt>
-<dd><p>This class describes all the configurations needed for the <a class="reference internal" href="#piclap.Listener" title="piclap.Listener"><code class="xref py py-class docutils literal notranslate"><span class="pre">Listener</span></code></a> to work.</p>
+<dt id="pidoorbuzz.Settings">
+<em class="property">class </em><code class="sig-prename descclassname">pidoorbuzz.</code><code class="sig-name descname">Settings</code><a class="reference internal" href="_modules/pidoorbuzz/_settings.html#Settings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class describes all the configurations needed for the <a class="reference internal" href="#pidoorbuzz.Listener" title="pidoorbuzz.Listener"><code class="xref py py-class docutils literal notranslate"><span class="pre">Listener</span></code></a> to work.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Variables</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="#piclap.Settings.exit" title="piclap.Settings.exit"><strong>exit</strong></a> (<em>boolean</em>) – Exit flag the determine the exit state of <a class="reference internal" href="#piclap.Listener" title="piclap.Listener"><code class="xref py py-class docutils literal notranslate"><span class="pre">Listener</span></code></a></p></li>
-<li><p><a class="reference internal" href="#piclap.Settings.rate" title="piclap.Settings.rate"><strong>rate</strong></a> (<em>int</em>) – Bitrate at which input audio is streamed</p></li>
-<li><p><a class="reference internal" href="#piclap.Settings.channels" title="piclap.Settings.channels"><strong>channels</strong></a> (<em>int</em>) – Number of audio channels used by <a class="reference internal" href="#piclap.Listener" title="piclap.Listener"><code class="xref py py-class docutils literal notranslate"><span class="pre">Listener</span></code></a></p></li>
-<li><p><a class="reference internal" href="#piclap.Settings.chunk_size" title="piclap.Settings.chunk_size"><strong>chunk_size</strong></a> (<em>int</em>) – Frame count inside the audio buffer</p></li>
-<li><p><a class="reference internal" href="#piclap.Settings.wait" title="piclap.Settings.wait"><strong>wait</strong></a> (<em>float</em>) – Clap wait in seconds</p></li>
-<li><p><a class="reference internal" href="#piclap.Settings.method" title="piclap.Settings.method"><strong>method</strong></a> (class: <cite>Munch</cite>) – The algorithm used for the detection of claps</p></li>
-<li><p><a class="reference internal" href="#piclap.Settings.actions" title="piclap.Settings.actions"><strong>actions</strong></a> (<em>list</em><em>(</em><em>str</em><em>)</em>) – Collection of defined actions</p></li>
+<li><p><a class="reference internal" href="#pidoorbuzz.Settings.exit" title="pidoorbuzz.Settings.exit"><strong>exit</strong></a> (<em>boolean</em>) – Exit flag the determine the exit state of <a class="reference internal" href="#pidoorbuzz.Listener" title="pidoorbuzz.Listener"><code class="xref py py-class docutils literal notranslate"><span class="pre">Listener</span></code></a></p></li>
+<li><p><a class="reference internal" href="#pidoorbuzz.Settings.rate" title="pidoorbuzz.Settings.rate"><strong>rate</strong></a> (<em>int</em>) – Bitrate at which input audio is streamed</p></li>
+<li><p><a class="reference internal" href="#pidoorbuzz.Settings.channels" title="pidoorbuzz.Settings.channels"><strong>channels</strong></a> (<em>int</em>) – Number of audio channels used by <a class="reference internal" href="#pidoorbuzz.Listener" title="pidoorbuzz.Listener"><code class="xref py py-class docutils literal notranslate"><span class="pre">Listener</span></code></a></p></li>
+<li><p><a class="reference internal" href="#pidoorbuzz.Settings.chunk_size" title="pidoorbuzz.Settings.chunk_size"><strong>chunk_size</strong></a> (<em>int</em>) – Frame count inside the audio buffer</p></li>
+<li><p><a class="reference internal" href="#pidoorbuzz.Settings.wait" title="pidoorbuzz.Settings.wait"><strong>wait</strong></a> (<em>float</em>) – Clap wait in seconds</p></li>
+<li><p><a class="reference internal" href="#pidoorbuzz.Settings.method" title="pidoorbuzz.Settings.method"><strong>method</strong></a> (class: <cite>Munch</cite>) – The algorithm used for the detection of claps</p></li>
+<li><p><a class="reference internal" href="#pidoorbuzz.Settings.actions" title="pidoorbuzz.Settings.actions"><strong>actions</strong></a> (<em>list</em><em>(</em><em>str</em><em>)</em>) – Collection of defined actions</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py attribute">
-<dt id="piclap.Settings.actions">
-<code class="sig-name descname">actions</code><a class="headerlink" href="#piclap.Settings.actions" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Settings.actions">
+<code class="sig-name descname">actions</code><a class="headerlink" href="#pidoorbuzz.Settings.actions" title="Permalink to this definition">¶</a></dt>
 <dd><p>When the class initialised, it collects all the actions defined inside this class as well as any classes where are derived with this class as base class</p>
-<p><strong>Condition:</strong> <em>The method name defined should start with ‘on’ and end with ‘Claps’ with the clap count inbetween them.</em></p>
+<p><strong>Condition:</strong> <em>The method name defined should start with ‘on’ and end with ‘Claps’ with the door buzz count inbetween them.</em></p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="piclap.Settings.channels">
-<code class="sig-name descname">channels</code><a class="headerlink" href="#piclap.Settings.channels" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Settings.channels">
+<code class="sig-name descname">channels</code><a class="headerlink" href="#pidoorbuzz.Settings.channels" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>default:</strong> <code class="docutils literal notranslate"><span class="pre">1</span></code> (Mono Channel)</p>
 <p>Number of audio channel to listen</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="piclap.Settings.chunk_size">
-<code class="sig-name descname">chunk_size</code><a class="headerlink" href="#piclap.Settings.chunk_size" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Settings.chunk_size">
+<code class="sig-name descname">chunk_size</code><a class="headerlink" href="#pidoorbuzz.Settings.chunk_size" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>default:</strong> <code class="docutils literal notranslate"><span class="pre">1024</span></code></p>
 <p>Number of frames in the input audio buffer</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="piclap.Settings.exit">
-<code class="sig-name descname">exit</code><a class="headerlink" href="#piclap.Settings.exit" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Settings.exit">
+<code class="sig-name descname">exit</code><a class="headerlink" href="#pidoorbuzz.Settings.exit" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>default:</strong> <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
 <p>Exit flag</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="piclap.Settings.method">
-<code class="sig-name descname">method</code><a class="headerlink" href="#piclap.Settings.method" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Settings.method">
+<code class="sig-name descname">method</code><a class="headerlink" href="#pidoorbuzz.Settings.method" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>default:</strong> <code class="code docutils literal notranslate"><span class="pre">{'name':</span> <span class="pre">'threshold','value':</span> <span class="pre">7000}</span></code></p>
 <p>Detection method used for identifing claps</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.Settings.on2Claps">
-<code class="sig-name descname">on2Claps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_settings.html#Settings.on2Claps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Settings.on2Claps" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Settings.on2Claps">
+<code class="sig-name descname">on2Claps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_settings.html#Settings.on2Claps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Settings.on2Claps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Action performed when 2 claps are detected.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.Settings.on3Claps">
-<code class="sig-name descname">on3Claps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_settings.html#Settings.on3Claps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Settings.on3Claps" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Settings.on3Claps">
+<code class="sig-name descname">on3Claps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_settings.html#Settings.on3Claps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Settings.on3Claps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Action performed when 3 claps are detected.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.Settings.on4Claps">
-<code class="sig-name descname">on4Claps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_settings.html#Settings.on4Claps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Settings.on4Claps" title="Permalink to this definition">¶</a></dt>
-<dd><p>Action performed when 4 claps are detected. As default, <a class="reference internal" href="#piclap.Settings.exit" title="piclap.Settings.exit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">exit</span></code></a> flag is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> if 4 claps are detected</p>
+<dt id="pidoorbuzz.Settings.on4Claps">
+<code class="sig-name descname">on4Claps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_settings.html#Settings.on4Claps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Settings.on4Claps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Action performed when 4 claps are detected. As default, <a class="reference internal" href="#pidoorbuzz.Settings.exit" title="pidoorbuzz.Settings.exit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">exit</span></code></a> flag is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> if 4 claps are detected</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="piclap.Settings.rate">
-<code class="sig-name descname">rate</code><a class="headerlink" href="#piclap.Settings.rate" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Settings.rate">
+<code class="sig-name descname">rate</code><a class="headerlink" href="#pidoorbuzz.Settings.rate" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>default:</strong> <code class="docutils literal notranslate"><span class="pre">44100</span></code></p>
 <p>Number of audio samples collected in 1 second</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.Settings.updateMethod">
-<code class="sig-name descname">updateMethod</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_settings.html#Settings.updateMethod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Settings.updateMethod" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update the method for detecting clap</p>
+<dt id="pidoorbuzz.Settings.updateMethod">
+<code class="sig-name descname">updateMethod</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_settings.html#Settings.updateMethod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Settings.updateMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the method for detecting door buzz</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>method</strong> (<em>dict</em>) – A dict type parameter which defines a clap detection method</p>
+<dd class="field-odd"><p><strong>method</strong> (<em>dict</em>) – A dict type parameter which defines a door buzz detection method</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="piclap.Settings.wait">
-<code class="sig-name descname">wait</code><a class="headerlink" href="#piclap.Settings.wait" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Settings.wait">
+<code class="sig-name descname">wait</code><a class="headerlink" href="#pidoorbuzz.Settings.wait" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>default:</strong> <code class="docutils literal notranslate"><span class="pre">0.5</span></code></p>
-<p>Time duration to wait for claps to complete in <a class="reference internal" href="#piclap.Listener.clapWait" title="piclap.Listener.clapWait"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Listener.clapWait()</span></code></a></p>
+<p>Time duration to wait for claps to complete in <a class="reference internal" href="#pidoorbuzz.Listener.clapWait" title="pidoorbuzz.Listener.clapWait"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Listener.clapWait()</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -372,8 +372,8 @@
 <div class="section" id="signalprocessor-module">
 <h2>SignalProcessor Module<a class="headerlink" href="#signalprocessor-module" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="piclap.SignalProcessor">
-<em class="property">class </em><code class="sig-prename descclassname">piclap.</code><code class="sig-name descname">SignalProcessor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_processor.html#SignalProcessor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.SignalProcessor" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.SignalProcessor">
+<em class="property">class </em><code class="sig-prename descclassname">pidoorbuzz.</code><code class="sig-name descname">SignalProcessor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_processor.html#SignalProcessor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.SignalProcessor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Describes all the signal processing algorithms and selector method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -381,34 +381,34 @@
 </dd>
 <dt class="field-even">Variables</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="#piclap.SignalProcessor.alg_id" title="piclap.SignalProcessor.alg_id"><strong>alg_id</strong></a> (<em>int</em>) – Stores the ID of the algorithm used</p></li>
-<li><p><a class="reference internal" href="#piclap.SignalProcessor.algorithm" title="piclap.SignalProcessor.algorithm"><strong>algorithm</strong></a> (class: <cite>Munch</cite>) – Stores the configuration of the algorithm used</p></li>
+<li><p><a class="reference internal" href="#pidoorbuzz.SignalProcessor.alg_id" title="pidoorbuzz.SignalProcessor.alg_id"><strong>alg_id</strong></a> (<em>int</em>) – Stores the ID of the algorithm used</p></li>
+<li><p><a class="reference internal" href="#pidoorbuzz.SignalProcessor.algorithm" title="pidoorbuzz.SignalProcessor.algorithm"><strong>algorithm</strong></a> (class: <cite>Munch</cite>) – Stores the configuration of the algorithm used</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py attribute">
-<dt id="piclap.SignalProcessor.alg_id">
-<code class="sig-name descname">alg_id</code><a class="headerlink" href="#piclap.SignalProcessor.alg_id" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.SignalProcessor.alg_id">
+<code class="sig-name descname">alg_id</code><a class="headerlink" href="#pidoorbuzz.SignalProcessor.alg_id" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 <p>Search for the algorithm name in the <code class="docutils literal notranslate"><span class="pre">DETECTION_ALGORITHMS</span></code> and store the id found</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="piclap.SignalProcessor.algorithm">
-<code class="sig-name descname">algorithm</code><a class="headerlink" href="#piclap.SignalProcessor.algorithm" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.SignalProcessor.algorithm">
+<code class="sig-name descname">algorithm</code><a class="headerlink" href="#pidoorbuzz.SignalProcessor.algorithm" title="Permalink to this definition">¶</a></dt>
 <dd><p>The algorithm stored in this variable is used throughout the execution</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.SignalProcessor.findClap">
-<code class="sig-name descname">findClap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_processor.html#SignalProcessor.findClap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.SignalProcessor.findClap" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.SignalProcessor.findClap">
+<code class="sig-name descname">findClap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_processor.html#SignalProcessor.findClap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.SignalProcessor.findClap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Based on the detection algorithm selected, the data is given to the selected algorithm</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>data</strong> (<em>bytearray</em>) – Binary data received from microphone</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><cite>True</cite> if clap is detected, <cite>False</cite> otherwise</p>
+<dd class="field-even"><p><cite>True</cite> if door buzz is detected, <cite>False</cite> otherwise</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>bool</p>
@@ -417,8 +417,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.SignalProcessor.useFFT">
-<code class="sig-name descname">useFFT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">byte_stream</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_processor.html#SignalProcessor.useFFT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.SignalProcessor.useFFT" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.SignalProcessor.useFFT">
+<code class="sig-name descname">useFFT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">byte_stream</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_processor.html#SignalProcessor.useFFT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.SignalProcessor.useFFT" title="Permalink to this definition">¶</a></dt>
 <dd><p>This algorithm is not implemented yet</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -428,8 +428,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.SignalProcessor.useFiter">
-<code class="sig-name descname">useFiter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">byte_stream</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_processor.html#SignalProcessor.useFiter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.SignalProcessor.useFiter" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.SignalProcessor.useFiter">
+<code class="sig-name descname">useFiter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">byte_stream</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_processor.html#SignalProcessor.useFiter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.SignalProcessor.useFiter" title="Permalink to this definition">¶</a></dt>
 <dd><p>This algorithm is not implemented yet</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -439,8 +439,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.SignalProcessor.useThreshold">
-<code class="sig-name descname">useThreshold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">byte_stream</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_processor.html#SignalProcessor.useThreshold"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.SignalProcessor.useThreshold" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.SignalProcessor.useThreshold">
+<code class="sig-name descname">useThreshold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">byte_stream</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_processor.html#SignalProcessor.useThreshold"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.SignalProcessor.useThreshold" title="Permalink to this definition">¶</a></dt>
 <dd><p>This algorithm uses a threshold value to detect claps.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -456,8 +456,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.SignalProcessor.useWavelets">
-<code class="sig-name descname">useWavelets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">byte_stream</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_processor.html#SignalProcessor.useWavelets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.SignalProcessor.useWavelets" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.SignalProcessor.useWavelets">
+<code class="sig-name descname">useWavelets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">byte_stream</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_processor.html#SignalProcessor.useWavelets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.SignalProcessor.useWavelets" title="Permalink to this definition">¶</a></dt>
 <dd><p>This algorithm is not implemented yet</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -472,26 +472,26 @@
 <div class="section" id="device-module">
 <h2>Device Module<a class="headerlink" href="#device-module" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="piclap.Device">
-<em class="property">class </em><code class="sig-prename descclassname">piclap.</code><code class="sig-name descname">Device</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">calibrate</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_listener.html#Device"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Device" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Device">
+<em class="property">class </em><code class="sig-prename descclassname">pidoorbuzz.</code><code class="sig-name descname">Device</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">calibrate</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_listener.html#Device"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Device" title="Permalink to this definition">¶</a></dt>
 <dd><p>Describes methods which are called by user for the initialisation of the PyAudio module to stream microphone input.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>config</strong> (class: <a class="reference internal" href="#piclap.Settings" title="piclap.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a>) – An object of <a class="reference internal" href="#piclap.Settings" title="piclap.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a> which is used for configuring the module, defaults to None</p></li>
+<li><p><strong>config</strong> (class: <a class="reference internal" href="#pidoorbuzz.Settings" title="pidoorbuzz.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a>) – An object of <a class="reference internal" href="#pidoorbuzz.Settings" title="pidoorbuzz.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a> which is used for configuring the module, defaults to None</p></li>
 <li><p><strong>calibrate</strong> (<em>bool</em>) – If the flag is set, the chunk size is calibrated, defaults to True</p></li>
 </ul>
 </dd>
 <dt class="field-even">Variables</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="#piclap.Listener.config" title="piclap.Listener.config"><strong>config</strong></a> (class: <cite>Settings</cite>) – Store the <a class="reference internal" href="#piclap.Settings" title="piclap.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a> object</p></li>
+<li><p><a class="reference internal" href="#pidoorbuzz.Listener.config" title="pidoorbuzz.Listener.config"><strong>config</strong></a> (class: <cite>Settings</cite>) – Store the <a class="reference internal" href="#pidoorbuzz.Settings" title="pidoorbuzz.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a> object</p></li>
 <li><p><strong>input</strong> (class: <cite>PyAudio</cite>) – Store the <cite>PyAudio</cite> object</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="piclap.Device.calibrateBufferSize">
-<code class="sig-name descname">calibrateBufferSize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">enabled</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_listener.html#Device.calibrateBufferSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Device.calibrateBufferSize" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Device.calibrateBufferSize">
+<code class="sig-name descname">calibrateBufferSize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">enabled</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_listener.html#Device.calibrateBufferSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Device.calibrateBufferSize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calibrate the chunk size to a size which the user’s system can process without any errors</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -501,27 +501,27 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.Device.closeStream">
-<code class="sig-name descname">closeStream</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_listener.html#Device.closeStream"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Device.closeStream" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Device.closeStream">
+<code class="sig-name descname">closeStream</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_listener.html#Device.closeStream"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Device.closeStream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Close the audio stream</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.Device.openStream">
-<code class="sig-name descname">openStream</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_listener.html#Device.openStream"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Device.openStream" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Device.openStream">
+<code class="sig-name descname">openStream</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_listener.html#Device.openStream"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Device.openStream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open as binary stream to receive audio signals from microphone</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.Device.readData">
-<code class="sig-name descname">readData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_listener.html#Device.readData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Device.readData" title="Permalink to this definition">¶</a></dt>
+<dt id="pidoorbuzz.Device.readData">
+<code class="sig-name descname">readData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_listener.html#Device.readData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Device.readData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads a single chunk of binary data from stream</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="piclap.Device.setThreshold">
-<code class="sig-name descname">setThreshold</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/piclap/_listener.html#Device.setThreshold"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#piclap.Device.setThreshold" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the threashold value to the most closest value where a clap is detected. (Not accurate)</p>
+<dt id="pidoorbuzz.Device.setThreshold">
+<code class="sig-name descname">setThreshold</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pidoorbuzz/_listener.html#Device.setThreshold"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pidoorbuzz.Device.setThreshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the threashold value to the most closest value where a door buzz is detected. (Not accurate)</p>
 </dd></dl>
 
 </dd></dl>
@@ -550,7 +550,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, Nikhil John
+        &copy; Copyright 2020, Vamsi Yechoor
 
     </p>
   </div>

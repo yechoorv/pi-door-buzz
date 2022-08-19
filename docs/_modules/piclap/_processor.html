@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>piclap._processor &mdash; pi-clap 1.4.2 documentation</title>
+  <title>pidoorbuzz._processor &mdash; pi-door-buzz 1.4.2 documentation</title>
   
 
   
@@ -49,7 +49,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> pi-clap
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> pi-door-buzz
           
 
           
@@ -95,8 +95,8 @@
 <p class="caption"><span class="caption-text">Links</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://magpi.raspberrypi.org/articles/raspberry-pi-clapper">MagPi Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/pi-clap/">Python Package</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/nikhiljohn10/pi-clap">Source Code</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/pi-door-buzz/">Python Package</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/nikhiljohn10/pi-door-buzz">Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
@@ -113,7 +113,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">pi-clap</a>
+          <a href="../../index.html">pi-door-buzz</a>
         
       </nav>
 
@@ -146,7 +146,7 @@
         
           <li><a href="../index.html">Module code</a> &raquo;</li>
         
-      <li>piclap._processor</li>
+      <li>pidoorbuzz._processor</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -161,19 +161,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for piclap._processor</h1><div class="highlight"><pre>
+  <h1>Source code for pidoorbuzz._processor</h1><div class="highlight"><pre>
 <span></span><span class="ch">#!/usr/bin/python3</span>
 
 <span class="kn">from</span> <span class="nn">array</span> <span class="kn">import</span> <span class="n">array</span>
 
-<span class="n">DETECTION_ALGORITHMS</span> <span class="o">=</span> <span class="p">[</span>           <span class="c1"># Method list for clap detection</span>
+<span class="n">DETECTION_ALGORITHMS</span> <span class="o">=</span> <span class="p">[</span>           <span class="c1"># Method list for door buzz detection</span>
     <span class="s1">&#39;threshold&#39;</span><span class="p">,</span>
     <span class="s1">&#39;filter&#39;</span><span class="p">,</span>
     <span class="s1">&#39;fft&#39;</span><span class="p">,</span>
     <span class="s1">&#39;wavelet&#39;</span>
 <span class="p">]</span>
 
-<div class="viewcode-block" id="SignalProcessor"><a class="viewcode-back" href="../../documentation.html#piclap.SignalProcessor">[docs]</a><span class="k">class</span> <span class="nc">SignalProcessor</span><span class="p">():</span>
+<div class="viewcode-block" id="SignalProcessor"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.SignalProcessor">[docs]</a><span class="k">class</span> <span class="nc">SignalProcessor</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Describes all the signal processing algorithms and selector method.</span>
 
 <span class="sd">    :param method: An object that contain the configuration and details of which algorithm to be used for processing the data received.</span>
@@ -192,12 +192,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">algorithm</span> <span class="o">=</span> <span class="n">method</span>
         <span class="sd">&quot;&quot;&quot;The algorithm stored in this variable is used throughout the execution&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="SignalProcessor.findClap"><a class="viewcode-back" href="../../documentation.html#piclap.SignalProcessor.findClap">[docs]</a>    <span class="k">def</span> <span class="nf">findClap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="SignalProcessor.findClap"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.SignalProcessor.findClap">[docs]</a>    <span class="k">def</span> <span class="nf">findClap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Based on the detection algorithm selected, the data is given to the selected algorithm</span>
 
 <span class="sd">        :param data: Binary data received from microphone</span>
 <span class="sd">        :type data: bytearray</span>
-<span class="sd">        :return: `True` if clap is detected, `False` otherwise</span>
+<span class="sd">        :return: `True` if door buzz is detected, `False` otherwise</span>
 <span class="sd">        :rtype: bool</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">byte_stream</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="n">data</span> <span class="o">==</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">data</span>
@@ -210,7 +210,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">useThreshold</span><span class="p">(</span><span class="n">byte_stream</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="SignalProcessor.useFiter"><a class="viewcode-back" href="../../documentation.html#piclap.SignalProcessor.useFiter">[docs]</a>    <span class="k">def</span> <span class="nf">useFiter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">byte_stream</span><span class="p">):</span>
+<div class="viewcode-block" id="SignalProcessor.useFiter"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.SignalProcessor.useFiter">[docs]</a>    <span class="k">def</span> <span class="nf">useFiter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">byte_stream</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;This algorithm is not implemented yet</span>
 
 <span class="sd">        :param byte_stream: Binary stream of data received from microphone</span>
@@ -219,7 +219,7 @@
         <span class="c1"># TODO</span>
         <span class="k">return</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="SignalProcessor.useFFT"><a class="viewcode-back" href="../../documentation.html#piclap.SignalProcessor.useFFT">[docs]</a>    <span class="k">def</span> <span class="nf">useFFT</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">byte_stream</span><span class="p">):</span>
+<div class="viewcode-block" id="SignalProcessor.useFFT"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.SignalProcessor.useFFT">[docs]</a>    <span class="k">def</span> <span class="nf">useFFT</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">byte_stream</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;This algorithm is not implemented yet</span>
 
 <span class="sd">        :param byte_stream: Binary stream of data received from microphone</span>
@@ -228,7 +228,7 @@
         <span class="c1"># TODO</span>
         <span class="k">return</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="SignalProcessor.useWavelets"><a class="viewcode-back" href="../../documentation.html#piclap.SignalProcessor.useWavelets">[docs]</a>    <span class="k">def</span> <span class="nf">useWavelets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">byte_stream</span><span class="p">):</span>
+<div class="viewcode-block" id="SignalProcessor.useWavelets"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.SignalProcessor.useWavelets">[docs]</a>    <span class="k">def</span> <span class="nf">useWavelets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">byte_stream</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;This algorithm is not implemented yet</span>
 
 <span class="sd">        :param byte_stream: Binary stream of data received from microphone</span>
@@ -237,7 +237,7 @@
         <span class="c1"># TODO</span>
         <span class="k">return</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="SignalProcessor.useThreshold"><a class="viewcode-back" href="../../documentation.html#piclap.SignalProcessor.useThreshold">[docs]</a>    <span class="k">def</span> <span class="nf">useThreshold</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">byte_stream</span><span class="p">):</span>
+<div class="viewcode-block" id="SignalProcessor.useThreshold"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.SignalProcessor.useThreshold">[docs]</a>    <span class="k">def</span> <span class="nf">useThreshold</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">byte_stream</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;This algorithm uses a threshold value to detect claps.</span>
 
 <span class="sd">        :param byte_stream: Binary stream of data received from microphone</span>
@@ -260,7 +260,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, Nikhil John
+        &copy; Copyright 2020, Vamsi Yechoor
 
     </p>
   </div>

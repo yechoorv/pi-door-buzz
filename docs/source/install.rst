@@ -48,7 +48,7 @@ MacOS
     brew install python3 portaudio
     python3 -m pip install --user pyaudio || python3 -m pip install --user --global-option='build_ext' --global-option='-I/usr/local/include' --global-option='-L/usr/local/lib' pyaudio
 
-Install pi-clap
+Install pi-door-buzz
 ---------------
 
 Using Git
@@ -56,8 +56,8 @@ Using Git
 
 .. code-block:: sh
 
-    git clone https://github.com/nikhiljohn10/pi-clap
-    cd pi-clap
+    git clone https://github.com/nikhiljohn10/pi-door-buzz
+    cd pi-door-buzz
     make local-install
     make run
 
@@ -70,14 +70,14 @@ Using Pip
 
 .. code-block:: sh
 
-    python3 -m pip install --user pi-clap
+    python3 -m pip install --user pi-door-buzz
 
 **Use the module as it is given in the example below.**
 
-Using pi-clap
+Using pi-door-buzz
 -------------
 
-Writing an app using pi-clap is only 3 lines it need ideally.
+Writing an app using pi-door-buzz is only 3 lines it need ideally.
 
 .. literalinclude:: ../../example/app.py
    :language: python

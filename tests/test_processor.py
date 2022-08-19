@@ -3,7 +3,7 @@ import sys
 from array import array
 sys.path.append(os.path.abspath('.'))
 
-from piclap import SignalProcessor
+from pidoorbuzz import SignalProcessor
 from munch import DefaultMunch as Objectify
 
 DETECTION_ALGORITHMS = [

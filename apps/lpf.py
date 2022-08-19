@@ -1,7 +1,7 @@
 import os
 import sys
 sys.path.append(os.path.abspath('.'))
-from piclap import *
+from pidoorbuzz import *
 import numpy as np  # 1.19.1
 import matplotlib.pyplot as plt  # 3.3.1
 from scipy import signal  # 1.5.2

@@ -1,9 +1,9 @@
 .. highlight::  python
 
-Welcome to pi-clap
+Welcome to pi-door-buzz
 ==================
 
-**A python package for clap detection**
+**A python package for door buzz detection**
 
 Contents
 ^^^^^^^^
@@ -23,8 +23,8 @@ Contents
   :hidden:
 
   MagPi Tutorial <https://magpi.raspberrypi.org/articles/raspberry-pi-clapper>
-  Python Package <https://pypi.org/project/pi-clap/>
-  Source Code <https://github.com/nikhiljohn10/pi-clap>
+  Python Package <https://pypi.org/project/pi-door-buzz/>
+  Source Code <https://github.com/nikhiljohn10/pi-door-buzz>
   genindex
 
 
@@ -58,7 +58,7 @@ Dependencies
 Upcoming features
 ^^^^^^^^^^^^^^^^^
 
-* Adding advanced clap detection algorithms
+* Adding advanced door buzz detection algorithms
 * Adding support for automation platforms like Amazon Alexa, Google Home, IFTTT etc.
 
 License
@@ -67,5 +67,5 @@ License
 MIT License
 
 .. meta::
-   :description: pi-clap - A python package for clap detection
-   :keywords: pi-clap, clap detection, python package
+   :description: pi-door-buzz - A python package for door buzz detection
+   :keywords: pi-door-buzz, door buzz detection, python package
