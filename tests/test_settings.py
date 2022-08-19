@@ -3,7 +3,7 @@ import sys
 sys.path.append(os.path.abspath('.'))
 
 from pytest import approx
-from piclap import Settings
+from pidoorbuzz import Settings
 
 def test_updating():
     old_config = Settings()

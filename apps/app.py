@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from piclap import *
+from pidoorbuzz import *
 
 listener = Listener()
 listener.start()

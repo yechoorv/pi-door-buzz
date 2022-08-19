@@ -50,7 +50,7 @@ class Settings:
             'on') and m.endswith('Claps')]
         """When the class initialised, it collects all the actions defined inside this class as well as any classes where are derived with this class as base class
 
-        **Condition:** *The method name defined should start with 'on' and end with 'Claps' with the clap count inbetween them.*
+        **Condition:** *The method name defined should start with 'on' and end with 'Claps' with the door buzz count inbetween them.*
         """
 
     def on2Claps(self):
@@ -66,8 +66,8 @@ class Settings:
         self.exit = True
 
     def updateMethod(self, method):
-        """Update the method for detecting clap
+        """Update the method for detecting door buzz
 
-        :param dict method: A dict type parameter which defines a clap detection method
+        :param dict method: A dict type parameter which defines a door buzz detection method
         """
         self.method = Objectify.fromDict(method, False)

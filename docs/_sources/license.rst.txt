@@ -5,7 +5,7 @@ License
 
 .. raw:: html
 
-  <i>Copyright &copy; 2020 Nikhil John</i><br><br>
+  <i>Copyright &copy; 2020 Vamsi Yechoor</i><br><br>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

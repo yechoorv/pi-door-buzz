@@ -2,7 +2,7 @@
 
 from array import array
 
-DETECTION_ALGORITHMS = [           # Method list for clap detection
+DETECTION_ALGORITHMS = [           # Method list for door buzz detection
     'threshold',
     'filter',
     'fft',
@@ -33,7 +33,7 @@ class SignalProcessor():
 
         :param data: Binary data received from microphone
         :type data: bytearray
-        :return: `True` if clap is detected, `False` otherwise
+        :return: `True` if door buzz is detected, `False` otherwise
         :rtype: bool
         """
         byte_stream = array('b', [0]) if data == None else data

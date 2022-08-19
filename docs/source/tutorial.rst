@@ -46,14 +46,14 @@ Setting up Raspberry Pi
 
 Now you are updated and ready to use via SSH from different computer. Now you can disconnect monitor and keyboard if you want to use SSH.
 
-Using pi-clap
+Using pi-door-buzz
 -------------
 
  .. image:: _static/pi_circuit.png
    :width: 600
    :alt: Raspberry Pi Circuit
 
-How to wire up for pi-clap?
+How to wire up for pi-door-buzz?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Connect ``Ground Pin(6)`` to breadboard's sideline
@@ -63,11 +63,11 @@ How to wire up for pi-clap?
 5. Plugin the USB input audio device(Audio Card or Microphone)
 6. Reboot the OS with `sudo reboot` (This should load the audio driver automatically in most cases for the device connected)
 7. Install pip & portaudio module ``sudo apt-get install -y python3-pip portaudio19-dev``
-8. Install pi-clap pip module ``pip3 install pi-clap``
+8. Install pi-door-buzz pip module ``pip3 install pi-door-buzz``
 
-Now the Raspberry Pi is ready use pi-clap
+Now the Raspberry Pi is ready use pi-door-buzz
 
-Use following code for pi-clap to start listening. Make the necessary adjustments in the code and values to match your microphone and pinout. You can also add more methods in the derived classes.
+Use following code for pi-door-buzz to start listening. Make the necessary adjustments in the code and values to match your microphone and pinout. You can also add more methods in the derived classes.
 
 .. literalinclude:: ../../example/rpi.app.py
   :language: python

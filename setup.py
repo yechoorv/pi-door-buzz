@@ -2,15 +2,15 @@
 
     ###################
     ##               ##
-    ##    Pi-Clap    ##
+    ##    Pi-Door-Buzz    ##
     ##               ##
     ###################
 
-Repo: https://github.com/nikhiljohn10/pi-clap
-Author: Nikhil John
+Repo: https://github.com/yechoorv/pi-door-buzz
+Author: Vamsi Yechoor
 License: MIT
 """
-from piclap import __version__ as VERSION
+from pidoorbuzz import __version__ as VERSION
 
 from setuptools import setup, find_packages
 
@@ -18,15 +18,15 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="pi-clap",
+    name="pi-door-buzz",
     version=VERSION,
-    author="Nikhil John",
+    author="Vamsi Yechoor",
     author_email="ceo@jwala.diamonds",
-    description="A python package for clap detection",
-    url="https://pi-clap.nikz.in",
+    description="A python package for door buzz detection",
+    url="https://pi-door-buzz.nikz.in",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    download_url="https://github.com/nikhiljohn10/pi-clap",
+    download_url="https://github.com/nikhiljohn10/pi-door-buzz",
     packages=find_packages(),
     license="MIT",
     classifiers=[
@@ -43,7 +43,7 @@ setup(
         "License :: OSI Approved :: MIT License",
     ],
     platforms="any",
-    py_modules=['piclap'],
+    py_modules=['pidoorbuzz'],
     python_requires='>=3.6',
     install_requires=[
         "gpiozero==1.5.1",

@@ -4,7 +4,7 @@ import os
 import sys
 sys.path.append(os.path.abspath('.'))
 
-from piclap import *
+from pidoorbuzz import *
 
 
 class Config(Settings):

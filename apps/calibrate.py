@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import re
-from piclap import *
+from pidoorbuzz import *
 from time import sleep
 from array import array
 
@@ -47,7 +47,7 @@ def main():
           config.chunk_size = int(config.chunk_size/2)
     listener.stop()
 
-    # Calibrating clap threshold
+    # Calibrating door buzz threshold
 
     print("START CLAPPING NOW\nFinding peak value...")
     listener = Listener(config)

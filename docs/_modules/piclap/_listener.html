@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>piclap._listener &mdash; pi-clap 1.4.2 documentation</title>
+  <title>pidoorbuzz._listener &mdash; pi-door-buzz 1.4.2 documentation</title>
   
 
   
@@ -49,7 +49,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> pi-clap
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> pi-door-buzz
           
 
           
@@ -95,8 +95,8 @@
 <p class="caption"><span class="caption-text">Links</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://magpi.raspberrypi.org/articles/raspberry-pi-clapper">MagPi Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/pi-clap/">Python Package</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/nikhiljohn10/pi-clap">Source Code</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/pi-door-buzz/">Python Package</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/nikhiljohn10/pi-door-buzz">Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
@@ -113,7 +113,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">pi-clap</a>
+          <a href="../../index.html">pi-door-buzz</a>
         
       </nav>
 
@@ -146,7 +146,7 @@
         
           <li><a href="../index.html">Module code</a> &raquo;</li>
         
-      <li>piclap._listener</li>
+      <li>pidoorbuzz._listener</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -161,7 +161,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for piclap._listener</h1><div class="highlight"><pre>
+  <h1>Source code for pidoorbuzz._listener</h1><div class="highlight"><pre>
 <span></span><span class="ch">#!/usr/bin/python3</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -176,7 +176,7 @@
 <span class="kn">from</span> <span class="nn">._processor</span> <span class="kn">import</span> <span class="n">SignalProcessor</span>
 
 
-<div class="viewcode-block" id="Listener"><a class="viewcode-back" href="../../documentation.html#piclap.Listener">[docs]</a><span class="k">class</span> <span class="nc">Listener</span><span class="p">():</span>
+<div class="viewcode-block" id="Listener"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.Listener">[docs]</a><span class="k">class</span> <span class="nc">Listener</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Describes methods which are called by user for the initialisation of the PyAudio module to stream microphone input.</span>
 
 <span class="sd">    :param config: An object of :class:`Settings` which is used for configuring the module, defaults to None</span>
@@ -210,16 +210,16 @@
         <span class="sd">&quot;&quot;&quot;Initialised with an :class:`SignalProcessor` object using the signal processing method found inside :attr:`config`&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">confirm</span><span class="p">()</span>
 
-<div class="viewcode-block" id="Listener.clapWait"><a class="viewcode-back" href="../../documentation.html#piclap.Listener.clapWait">[docs]</a>    <span class="k">def</span> <span class="nf">clapWait</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clap</span><span class="p">):</span>
+<div class="viewcode-block" id="Listener.clapWait"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.Listener.clapWait">[docs]</a>    <span class="k">def</span> <span class="nf">clapWait</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">door buzz</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Start waiting for a small duration of time recursively until no more new claps are detected</span>
 
-<span class="sd">        :param int clap: Number of claps found at the time of wait initialised</span>
+<span class="sd">        :param int door buzz: Number of claps found at the time of wait initialised</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">sleep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">wait</span><span class="p">)</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">claps</span> <span class="o">&gt;</span> <span class="n">clap</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">claps</span> <span class="o">&gt;</span> <span class="n">door buzz</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">clapWait</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">claps</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Listener.listenClaps"><a class="viewcode-back" href="../../documentation.html#piclap.Listener.listenClaps">[docs]</a>    <span class="k">def</span> <span class="nf">listenClaps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threadName</span><span class="p">):</span>
+<div class="viewcode-block" id="Listener.listenClaps"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.Listener.listenClaps">[docs]</a>    <span class="k">def</span> <span class="nf">listenClaps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threadName</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;This method runs on a child thread with :attr:`lock` when :attr:`claps` equals ``1`` and reset the class property :attr:`claps` to ``0`` when execution is finished</span>
 
 <span class="sd">        :param str threadName: Name of the child thread started</span>
@@ -242,7 +242,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Algorithm selected</span><span class="se">\t</span><span class="s2">:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">method</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Threshold Value</span><span class="se">\t\t</span><span class="s2">:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">method</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Listener.confirm"><a class="viewcode-back" href="../../documentation.html#piclap.Listener.confirm">[docs]</a>    <span class="k">def</span> <span class="nf">confirm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Listener.confirm"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.Listener.confirm">[docs]</a>    <span class="k">def</span> <span class="nf">confirm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">__printInfo</span><span class="p">()</span>
             <span class="n">ask</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Confirm(c) / Recalibrate(r) / Manual(m) / Quit(q)?[c/r/m/q](default is c): &#39;</span><span class="p">)</span>
@@ -259,7 +259,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input. Try again.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Listener.start"><a class="viewcode-back" href="../../documentation.html#piclap.Listener.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Listener.start"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.Listener.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;When this method is called, the listener start reading binary data from stream and sreach for claps inside the chunks of data using :class:`SignalProcessor` until :attr:`Settings.exit` flag is ``True``</span>
 
 <span class="sd">        :raises: ``KeyboardInterrupt``: If **Control + C** is pressed on keyboard</span>
@@ -281,14 +281,14 @@
             <span class="k">pass</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Listener.stop"><a class="viewcode-back" href="../../documentation.html#piclap.Listener.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Listener.stop"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.Listener.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;When this method is called, the listener stop listening by closing the stream safely and terminating the connection&quot;&quot;&quot;</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">Exiting&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="o">.</span><span class="n">closeStream</span><span class="p">()</span>
         <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span></div></div>
 
 
-<div class="viewcode-block" id="Device"><a class="viewcode-back" href="../../documentation.html#piclap.Device">[docs]</a><span class="k">class</span> <span class="nc">Device</span><span class="p">:</span>
+<div class="viewcode-block" id="Device"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.Device">[docs]</a><span class="k">class</span> <span class="nc">Device</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Describes methods which are called by user for the initialisation of the PyAudio module to stream microphone input.</span>
 
 <span class="sd">    :param config: An object of :class:`Settings` which is used for configuring the module, defaults to None</span>
@@ -327,11 +327,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">channels</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">defaultDevice</span><span class="p">[</span><span class="s1">&#39;maxInputChannels&#39;</span><span class="p">])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">rate</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">defaultDevice</span><span class="p">[</span><span class="s1">&#39;defaultSampleRate&#39;</span><span class="p">])</span>
 
-<div class="viewcode-block" id="Device.readData"><a class="viewcode-back" href="../../documentation.html#piclap.Device.readData">[docs]</a>    <span class="k">def</span> <span class="nf">readData</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Device.readData"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.Device.readData">[docs]</a>    <span class="k">def</span> <span class="nf">readData</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Reads a single chunk of binary data from stream&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">chunk_size</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Device.openStream"><a class="viewcode-back" href="../../documentation.html#piclap.Device.openStream">[docs]</a>    <span class="k">def</span> <span class="nf">openStream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Device.openStream"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.Device.openStream">[docs]</a>    <span class="k">def</span> <span class="nf">openStream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Open as binary stream to receive audio signals from microphone&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stream</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="n">pyaudio</span><span class="o">.</span><span class="n">paInt16</span><span class="p">,</span>
                                       <span class="n">channels</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span>
@@ -339,12 +339,12 @@
                                       <span class="nb">input</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                                       <span class="n">frames_per_buffer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">chunk_size</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Device.closeStream"><a class="viewcode-back" href="../../documentation.html#piclap.Device.closeStream">[docs]</a>    <span class="k">def</span> <span class="nf">closeStream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Device.closeStream"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.Device.closeStream">[docs]</a>    <span class="k">def</span> <span class="nf">closeStream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Close the audio stream&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">stop_stream</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Device.calibrateBufferSize"><a class="viewcode-back" href="../../documentation.html#piclap.Device.calibrateBufferSize">[docs]</a>    <span class="k">def</span> <span class="nf">calibrateBufferSize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="Device.calibrateBufferSize"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.Device.calibrateBufferSize">[docs]</a>    <span class="k">def</span> <span class="nf">calibrateBufferSize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Calibrate the chunk size to a size which the user&#39;s system can process without any errors</span>
 
 <span class="sd">        :param bool enabled: If :obj:`True`, calibration is done. Otherwise, it is not calibrated</span>
@@ -371,8 +371,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">closeStream</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">setThreshold</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Device.setThreshold"><a class="viewcode-back" href="../../documentation.html#piclap.Device.setThreshold">[docs]</a>    <span class="k">def</span> <span class="nf">setThreshold</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Set the threashold value to the most closest value where a clap is detected. (Not accurate)&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Device.setThreshold"><a class="viewcode-back" href="../../documentation.html#pidoorbuzz.Device.setThreshold">[docs]</a>    <span class="k">def</span> <span class="nf">setThreshold</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the threashold value to the most closest value where a door buzz is detected. (Not accurate)&quot;&quot;&quot;</span>
         <span class="n">maximum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maxSamples</span><span class="p">)</span>
         <span class="n">median</span> <span class="o">=</span> <span class="n">stat</span><span class="o">.</span><span class="n">median_high</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maxSamples</span><span class="p">)</span>
         <span class="n">inter_value</span> <span class="o">=</span> <span class="n">median</span> <span class="o">*</span> <span class="mf">3.141592653589793</span>
@@ -405,7 +405,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, Nikhil John
+        &copy; Copyright 2020, Vamsi Yechoor
 
     </p>
   </div>
